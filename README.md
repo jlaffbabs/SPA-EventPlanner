@@ -1,38 +1,38 @@
 # event_planner_spa_js
 
  ```
- user story #1
- As as user
- So I can choose which event to attend,
- I want to see a list of events by date and text
-
- user story #2
+ User Story 1
  As a user
- So I can add an event,
- I want to be able input an event description
+ So I can choose which event to attend
+ I want to see a list of events with their date and description
 
- user story #3
+ User Story 2
+ As a user
+ So I can add an event
+ I want to be able to input an event description
+
+ User Story 3
  As a user
  So others know when to attend my event
- I want to be able input the event date and time
+ I want to be able to input the event date and time
 
- user story #4
+ User Story 4
  As a user
  So that my event information is saved
- I want to be able submit the event information
+ I want to be able to submit the event information
 
- user story #5
+ User Story 5
  As a user
  So that others can see my event
  I want to see my event in the list
 
- user story #6
+ User Story 6
  As a user
- So I only see events that I can attend
- I only want to see events in happening in the future
+ So I can see events that I can attend
+ I only want to see events happening in the future
 
- user story #7
+ User Story 7
  As a user
- To make it easier to plan my calendar
+ So I can plan my calendar more easily
  I want to see events in date order
  ```
