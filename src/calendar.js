@@ -13,11 +13,14 @@ class Calendar {
     let dateNow = new Date()
 
     events.forEach(function(event) {
-      console.log('%£%£%£%£%£')
-      if (event.date === '01/01/2020') {
+      console.log('inside forEach')
+      if (event.date === '10/10/2019') {
+      console.log('inside if')
         future.push(event);
+        // console.log('after push')
       }
     })
+    console.log(future);
     return future;
   }
 }
