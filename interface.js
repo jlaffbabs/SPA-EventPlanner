@@ -6,11 +6,13 @@ submitButton.addEventListener('click', function(){
 
   let eventDate = document.getElementById('date').value;
 
-  let eventNew = new Event(eventDescription, eventDate);
+  let eventTime = document.getElementById('time').value;
+
+  let eventNew = new Event(eventDescription, eventDate, eventTime);
 
   let eventAdd = document.createElement("P");
 
-  eventAdd.innerText = `${eventNew.description} \n ${eventNew.date}`;
+  eventAdd.innerText = `${eventNew.description} \n ${eventNew.date} \n ${eventNew.time}`;
 
   let eventListing = document.getElementById('eventListing');
 
