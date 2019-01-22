@@ -1,5 +1,6 @@
 class Event {
-  constructor(description) {
+  constructor(description, date) {
     this.description = description;
+    this.date = date;
   }
 }
