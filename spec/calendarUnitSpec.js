@@ -26,8 +26,9 @@ describe('Calendar', () => {
 
   it('only displays upcoming events', () => {
     const testCalendar = new Calendar
-    const futureEvent = new Event("JAG's BBQ: Fun for everyone", "22/10/2019", "08:00")
-    const pastEvent = new Event("JAG's Lido Party", "22/01/2018", "07:00")
+    const futureEvent = new Event("JAG's BBQ: Fun for everyone", "2019/10/23", "08:00")
+    const pastEvent = new Event("JAG's Lido Party", "2018/08/19", "07:00")
+    const anotherfutureEvent = new Event("JAG", "2019/03/18", "06:00")
     testCalendar.add(futureEvent)
     // console.log(futureEvent) //** future event is definitely logged
     testCalendar.add(pastEvent)
@@ -35,9 +36,9 @@ describe('Calendar', () => {
     // console.log(testCalendar.events) //** BOTH events are definitely added
     // console.log(testCalendar.events[0].date) // Date comes out in 22/10/2019 format
     // console.log(testCalendar.dateMatcher())
-    // console.log(testCalendar.sort())
-    console.log(testCalendar.sort())
-    expect(testCalendar.sort()).toBe([futureEvent])
+    testCalendar.sort()
+    console.log(testCalendar.future)
+    expect(testCalendar.future[0].date).toBe("2019/10/23")
   })
 })
 
