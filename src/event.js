@@ -4,4 +4,13 @@ class Event {
     this.date = date;
     this.time = time;
   }
+
+  elementToDisplay() {
+  	let div = document.createElement('div')
+  	div.innerText = `${this.description} on ${this.date} at ${this.time}`
+  	return div;
+  }
+
+  
 }
+

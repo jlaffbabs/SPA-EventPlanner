@@ -11,7 +11,7 @@ class Calendar {
   
   sort() {
     let events = this.events;
-    let future = this.future
+    let future = this.future;
     let today = new Date;
     events.forEach(function(event) {
       let userDate = new Date(event.date);
@@ -22,4 +22,13 @@ class Calendar {
     return future;
   }
   
+  elementToDisplay() {
+    let div = document.createElement('div');
+    this.sort().forEach((event) => {
+      let eventHtml = event.elementToDisplay();
+      div.appendChild(eventHtml);
+    })
+    return div
+  }
 }
+
