@@ -29,10 +29,12 @@ class Calendar {
     let events = this.events;
     let future = [];
     let calendarForMatching = new Calendar
-
     events.forEach(function(event) {
+
+      console.log(event.date) // 22/10/2019, 22/01/2018
+      console.log(calendarForMatching.dateMatcher()) //23/01/2019
+      console.log((event.date <= calendarForMatching.dateMatcher()))
       if (event.date >= calendarForMatching.dateMatcher()) {
-        console.log('inside if')
         future.push(event);
       }
     })
