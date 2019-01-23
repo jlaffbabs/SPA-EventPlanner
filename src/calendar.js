@@ -7,20 +7,36 @@ class Calendar {
     this.events.push(event);
   }
 
+  dateMatcher() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+      dd='0'+dd
+    } 
+
+    if(mm<10) {
+      mm='0'+mm
+    } 
+
+    today = dd+'/'+mm+'/'+yyyy;
+    return today
+    }
+
   sort() {
     let events = this.events;
-    let future = []
-    let dateNow = new Date()
+    let future = [];
+    let calendarForMatching = new Calendar
 
     events.forEach(function(event) {
-      console.log('inside forEach')
-      if (event.date === '10/10/2019') {
-      console.log('inside if')
+      if (event.date >= calendarForMatching.dateMatcher()) {
+        console.log('inside if')
         future.push(event);
-        // console.log('after push')
       }
     })
-    console.log(future);
     return future;
-  }
+    }
+  
 }
