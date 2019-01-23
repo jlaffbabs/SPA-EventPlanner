@@ -36,6 +36,7 @@ describe('Calendar', () => {
     // console.log(testCalendar.events[0].date) // Date comes out in 22/10/2019 format
     // console.log(testCalendar.dateMatcher())
     // console.log(testCalendar.sort())
+    console.log(testCalendar.sort())
     expect(testCalendar.sort()).toBe([futureEvent])
   })
 })
