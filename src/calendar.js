@@ -33,7 +33,7 @@ class Calendar {
 
   render() {
     let div = document.createElement('div');
-    this.futureEvents().forEach((event) => {
+    this.sortUpcoming().forEach((event) => {
       let eventHtml = event.elementToDisplay();
       div.appendChild(eventHtml);
     })

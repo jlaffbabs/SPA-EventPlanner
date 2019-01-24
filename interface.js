@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
 
   const display = () => {
     let eventsDiv = document.getElementById('eventListing');
-    events = calendar.elementToDisplay();
+    events = calendar.render();
     eventsDiv.innerHTML = "";
     eventsDiv.appendChild(events);
   }
