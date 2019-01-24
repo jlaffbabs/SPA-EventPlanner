@@ -21,6 +21,16 @@ class Calendar {
     return future;
   }
   
+  sortUpcoming() {
+    let fut = this.futureEvents();
+    fut.sort((e1, e2) => {
+      let userDate = new Date(e1.date)
+      let userDate2 = new Date(e2.date)
+      return userDate - userDate2;
+    });
+    return fut;
+  }
+
   render() {
     let div = document.createElement('div');
     this.futureEvents().forEach((event) => {
@@ -29,5 +39,6 @@ class Calendar {
     })
     return div
   }
+
 }
 
