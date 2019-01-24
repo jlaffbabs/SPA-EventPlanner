@@ -21,7 +21,7 @@ class Calendar {
     return future;
   }
   
-  elementToDisplay() {
+  render() {
     let div = document.createElement('div');
     this.futureEvents().forEach((event) => {
       let eventHtml = event.elementToDisplay();

@@ -34,4 +34,13 @@ describe('Calendar', () => {
     let sortedCalendar = testCalendar.futureEvents()
     expect(sortedCalendar[0].date).toBe("2019/10/23")
   })
+
+  it('renders a div with 2 events', () => {
+    let e1 = {date: "2019/04/19", elementToDisplay: function() {return document.createElement('div')} }
+    let e2 = {date: "2029/04/19", elementToDisplay: function() {return document.createElement('div')} }
+    const calendar = new Calendar
+    calendar.add(e1)
+    calendar.add(e2)
+    expect(calendar.render().childElementCount).toBe(2)
+  })
 })
