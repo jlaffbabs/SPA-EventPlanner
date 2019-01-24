@@ -8,7 +8,7 @@ class Calendar {
   }
 
   
-  sort() {
+  futureEvents() {
     let events = this.events;
     let future = [];
     let today = new Date;
@@ -23,7 +23,7 @@ class Calendar {
   
   elementToDisplay() {
     let div = document.createElement('div');
-    this.sort().forEach((event) => {
+    this.futureEvents().forEach((event) => {
       let eventHtml = event.elementToDisplay();
       div.appendChild(eventHtml);
     })
