@@ -1,7 +1,6 @@
 class Calendar {
   constructor() {
     this.events = [];
-    this.future = [];
     }
 
   add(event) {
@@ -11,7 +10,7 @@ class Calendar {
   
   sort() {
     let events = this.events;
-    let future = this.future;
+    let future = [];
     let today = new Date;
     events.forEach(function(event) {
       let userDate = new Date(event.date);
