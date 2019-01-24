@@ -1,43 +1,43 @@
 describe('Calendar', () => {
+  let e1 = {description: "JAG's BBQ: Fun for everyone", date: "2019/10/10", time: "08:00", elementToDisplay: function() {return document.createElement('div')}}
+  let e2 = {description: "JAG's Lido Party", date: "2019/10/30", time: "08:00", elementToDisplay: function() {return document.createElement('div')}}
+  let e3 = {description: "Jacques BBQ", date: "2020/04/19"}
+  let e4 = {date: "2019/06/23"}
+  let e5 = {date: "2012/02/01"}
+
   it('saves a user event', () => {
-    let event = new Event("JAG's BBQ: Fun for everyone", "10/10/2019", "08:00")
     let calendar = new Calendar
-    calendar.add(event)
-    expect(calendar.events[0]).toBe(event)
+    calendar.add(e1)
+    expect(calendar.events[0]).toBe(e1)
   })
+
     it('saves a user event description', () => {
-    let event = new Event("JAG's BBQ: Fun for everyone", "10/10/2019", "08:00")
     let calendar = new Calendar
-    calendar.add(event)
+    calendar.add(e1)
     expect(calendar.events[0].description).toBe("JAG's BBQ: Fun for everyone")
   })
+
     it('saves a user event time', () => {
-    let event = new Event("JAG's BBQ: Fun for everyone", "10/10/2019", "08:00")
     let calendar = new Calendar
-    calendar.add(event)
+    calendar.add(e1)
     expect(calendar.events[0].time).toBe("08:00")
   })
+
     it('saves a user event date', () => {
-    let event = new Event("JAG's BBQ: Fun for everyone", "10/10/2019", "08:00")
     let calendar = new Calendar
-    calendar.add(event)
-    expect(calendar.events[0].date).toBe("10/10/2019")
+    calendar.add(e1)
+    expect(calendar.events[0].date).toBe("2019/10/10")
   })
 
   it('only displays upcoming events', () => {
     let testCalendar = new Calendar
-    let futureEvent = new Event("JAG's BBQ: Fun for everyone", "2019/10/23", "08:00")
-    let pastEvent = new Event("JAG's Lido Party", "2018/08/19", "07:00")
-    let anotherfutureEvent = new Event("JAG", "2019/03/18", "06:00")
-    testCalendar.add(futureEvent)
-    testCalendar.add(pastEvent)
+    testCalendar.add(e1)
+    testCalendar.add(e5)
     let sortedCalendar = testCalendar.futureEvents()
-    expect(sortedCalendar[0].date).toBe("2019/10/23")
+    expect(sortedCalendar[0].date).toBe("2019/10/10")
   })
 
   it('renders a div with 2 events', () => {
-    let e1 = {date: "2019/04/19", elementToDisplay: function() {return document.createElement('div')} }
-    let e2 = {date: "2029/04/19", elementToDisplay: function() {return document.createElement('div')} }
     let calendar = new Calendar
     calendar.add(e1)
     calendar.add(e2)
@@ -45,10 +45,10 @@ describe('Calendar', () => {
   })
 
   it('returns upcoming events in chronological order', () => {
-    let e1 = {date: "2019/04/19"}
-    let e2 = {date: "2020/04/19"}
-    let e3 = {date: "2019/06/23"}
-    let e4 = {date: "2019/02/01"}
+    // let e1 = {date: "2019/04/19"}
+    // let e2 = {date: "2020/04/19"}
+    // let e3 = {date: "2019/06/23"}
+    // let e4 = {date: "2019/02/01"}
     let calendar = new Calendar;
     calendar.add(e1);
     calendar.add(e2);
@@ -57,7 +57,7 @@ describe('Calendar', () => {
     let sortedCalendar = calendar.sortUpcoming();
     expect(sortedCalendar[0]).toBe(e4)
     expect(sortedCalendar[1]).toBe(e1)
-    expect(sortedCalendar[2]).toBe(e3)
-    expect(sortedCalendar[3]).toBe(e2)
+    expect(sortedCalendar[2]).toBe(e2)
+    expect(sortedCalendar[3]).toBe(e3)
   })
 })
