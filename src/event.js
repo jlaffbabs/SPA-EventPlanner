@@ -8,7 +8,7 @@ class Event {
 
   elementToDisplay() {
   	let div = document.createElement('div')
-  	div.innerText = `${this.description} on ${this.date} at ${this.time}`
+  	div.innerText = `${this.description} on ${this.date} at ${this.time}`;
   	return div;
   };
 

@@ -5,6 +5,7 @@
   <script type="text/javascript" src="src/calendar.js"></script>
   <script type="text/javascript" src="src/event.js"></script>
   <script type="text/javascript" src="interface.js"></script>
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
 </head>
 <body>
   <textarea name="description" id="desc" rows="4" cols="35" placeholder="Enter Event Description"></textarea>
@@ -17,8 +18,36 @@
   <br>
   <br>
   <button type="button" id="button" name="Submit">Submit</button>
+  <br>
+  <br>
+  <div class="container">
+  <header class="header">
+    <div class="search">
+      <input type="text" placeholder="Enter City Name" id="search-txt">
+      <a id="search-btn" href="#"><i class="fas fa-search"></i></a>
+    </div>
+  </header>
 
-  <div id="eventListing">
+  <main id="main">
+    
+    <div class="city-icon">
+      <div class="city-icon-holder">
+      <div id="city-name"></div>
+      <img src="" alt="" id="icon">
+        </div>
+    </div>
+    
+    <div class="temperature">
+      <div id="temp"></div>
+    </div>
+    
+    <div class="humidity">
+      <div id="humidity-div"></div>
+    </div>
+    
+  </main>
+  
+</div><div id="eventListing">
   </div>
 </body>
 </html>
